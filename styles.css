@@ -1,0 +1,548 @@
+/*
+================================================================================
+AARON REYES RODRIGUEZ - PORTFOLIO STYLESHEET (styles.css)
+Theme: Frutiger Aero (Glossy Web 2.0 Glassmorphism)
+
+TABLE OF CONTENTS:
+1. CSS Variables (:root)
+2. Global Resets & Body Layout
+3. Glassmorphism Panels (Header & Sections)
+4. Header Details & Contact Styles
+5. Content Sections (Typography, General layout)
+6. Component Styles
+   - Education Badge & Sub-elements
+   - Skills Grid & Cards
+   - Chronological Timeline & Lists
+7. Footer Layout
+8. Responsive Media Queries
+================================================================================
+*/
+
+/* =============================================================================
+   1. CSS VARIABLES (:root)
+   ============================================================================= */
+:root {
+    /* --- COLOR PALETTE (Frutiger Aero Theme) --- */
+    --color-sky-fallback: #87CEEB;     /* sky-blue background fallback */
+    --color-slate-900: #0f172a;        /* headings and key focus texts */
+    --color-slate-800: #1e293b;        /* primary standard body text */
+    --color-slate-700: #334155;        /* contact labels & footer text */
+    --color-slate-600: #475569;        /* degree detail and sub-meta text */
+    --color-slate-500: #64748b;        /* timeline numbers and address indicators */
+    --color-sky-dark: #0c4a6e;         /* dark blue for date badge text */
+    --color-sky-link: #0369a1;         /* clickable links */
+    --color-sky-accent: #0ea5e9;       /* bright sky blue highlight accent */
+    --color-green-accent: #15803d;     /* fresh green for tagline, gpa emphasis & dates */
+    
+    /* --- GLOW EFFECTS --- */
+    --glow-link-hover: rgba(14, 165, 233, 0.3);
+
+    /* --- TYPOGRAPHY --- */
+    --font-family-body: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-heading: 'Outfit', sans-serif;
+
+    /* --- LAYOUT CONFIGURATIONS --- */
+    --border-radius-large: 14px;
+    --border-radius-medium: 12px;
+
+    /* --- TRANSITIONS --- */
+    --transition-fast: all 0.2s ease;
+    --transition-normal: all 0.3s ease;
+    --transition-slow: all 0.35s ease;
+
+    /* --- GLASSMORPHISM EFFECT SETTINGS --- */
+    /* Header Card settings */
+    --glass-bg-header: rgba(255, 255, 255, 0.88);
+    --glass-border-header: rgba(255, 255, 255, 0.7);
+    --glass-border-header-top: rgba(255, 255, 255, 0.9);
+    --glass-blur-header: 18px;
+    --glass-shadow-header: 0 8px 32px rgba(0, 60, 120, 0.12);
+
+    /* Standard card settings */
+    --glass-bg-card: rgba(255, 255, 255, 0.85);
+    --glass-border-card: rgba(255, 255, 255, 0.65);
+    --glass-border-card-top: rgba(255, 255, 255, 0.85);
+    --glass-blur-card: 16px;
+    --glass-shadow-card: 0 8px 32px rgba(0, 60, 120, 0.1);
+    
+    /* Hovered card settings */
+    --glass-bg-card-hover: rgba(255, 255, 255, 0.92);
+    --glass-shadow-card-hover: 0 12px 40px rgba(0, 60, 120, 0.14);
+
+    /* Inner category card settings */
+    --glass-bg-subcard: rgba(255, 255, 255, 0.70);
+    --glass-border-subcard: rgba(255, 255, 255, 0.55);
+    --glass-border-subcard-top: rgba(255, 255, 255, 0.75);
+    --glass-bg-subcard-hover: rgba(255, 255, 255, 0.82);
+
+    /* Badge details */
+    --badge-bg-sky: rgba(14, 165, 233, 0.12);
+    --badge-border-sky: rgba(14, 165, 233, 0.2);
+}
+
+/* =============================================================================
+   2. GLOBAL RESETS & BODY LAYOUT
+   ============================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    color: var(--color-slate-800);
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    background-color: var(--color-sky-fallback);
+}
+
+/* 
+   Background pseudo-element overlay:
+   We apply the background image here with opacity so that it does not affect the text 
+   readability of the page content elements.
+*/
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('windows-wallpaper-27.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.85; /* Toned down slightly to improve overlay readability */
+    z-index: -1;
+}
+
+/* =============================================================================
+   3. GLASSMORPHISM PANELS (Header & Sections)
+   ============================================================================= */
+
+/* Main Header glass container */
+.resume-header {
+    background: var(--glass-bg-header);
+    backdrop-filter: blur(var(--glass-blur-header)) saturate(1.6);
+    -webkit-backdrop-filter: blur(var(--glass-blur-header)) saturate(1.6);
+    border: 1px solid var(--glass-border-header);
+    border-top: 1px solid var(--glass-border-header-top);
+    border-radius: var(--border-radius-large);
+    padding: 35px;
+    margin-bottom: 22px;
+    box-shadow:
+        var(--glass-shadow-header),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Common Section card panel */
+.resume-section {
+    background: var(--glass-bg-card);
+    backdrop-filter: blur(var(--glass-blur-card)) saturate(1.5);
+    -webkit-backdrop-filter: blur(var(--glass-blur-card)) saturate(1.5);
+    border: 1px solid var(--glass-border-card);
+    border-top: 1px solid var(--glass-border-card-top);
+    border-radius: var(--border-radius-large);
+    padding: 32px;
+    margin-bottom: 22px;
+    box-shadow:
+        var(--glass-shadow-card),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    transition: var(--transition-normal);
+}
+
+/* Hover dynamic micro-interaction on section cards */
+.resume-section:hover {
+    background: var(--glass-bg-card-hover);
+    box-shadow:
+        var(--glass-shadow-card-hover),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+/* =============================================================================
+   4. HEADER DETAILS & CONTACT STYLES
+   ============================================================================= */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.header-text {
+    flex: 1;
+    min-width: 280px;
+}
+
+.header-text h1 {
+    font-family: var(--font-family-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-slate-900);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.tagline {
+    font-size: 1.05rem;
+    color: var(--color-green-accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.header-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(14, 116, 144, 0.35),
+        rgba(14, 116, 144, 0.05)
+    );
+    margin-bottom: 14px;
+}
+
+/* Contact info style container */
+.contact-info {
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    color: var(--color-slate-700);
+    font-style: normal; /* Disables the browser default italicization for <address> */
+}
+
+/* Global hyperlinks styling (only for actionable elements) */
+.contact-item a {
+    color: var(--color-sky-link);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.contact-item a:hover {
+    color: var(--color-sky-accent);
+    text-shadow: 0 0 6px var(--glow-link-hover);
+}
+
+.font-muted {
+    color: var(--color-slate-500);
+}
+
+/* Profile image with glossy ring styling */
+.header-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 4px 20px rgba(0, 60, 120, 0.18),
+        0 0 0 2px rgba(14, 165, 233, 0.15),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+    transition: var(--transition-slow);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 8px 30px rgba(0, 60, 120, 0.22),
+        0 0 0 3px rgba(14, 165, 233, 0.25),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* =============================================================================
+   5. CONTENT SECTIONS (Typography, General layout)
+   ============================================================================= */
+.resume-section h2 {
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-slate-900);
+    margin-bottom: 16px;
+    border-left: 4px solid var(--color-sky-accent); /* visual anchor bar */
+    padding-left: 14px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.resume-section p {
+    font-size: 1rem;
+    color: var(--color-slate-800);
+    line-height: 1.75;
+}
+
+.section-intro {
+    margin-bottom: 18px;
+}
+
+/* =============================================================================
+   6. COMPONENT STYLES
+   ============================================================================= */
+
+/* --- A. EDUCATION BADGE & SUB-ELEMENTS --- */
+.education-block {
+    margin-top: 5px;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.education-header h3 {
+    font-size: 1.25rem;
+    color: var(--color-slate-800);
+    font-weight: 600;
+}
+
+.date-badge {
+    background: var(--badge-bg-sky);
+    color: var(--color-sky-dark);
+    border: 1px solid var(--badge-border-sky);
+    padding: 4px 16px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.degree-info {
+    font-style: italic;
+    color: var(--color-slate-600);
+    margin-bottom: 6px;
+}
+
+.gpa-info {
+    font-size: 0.95rem;
+    color: var(--color-slate-700);
+}
+
+.gpa-info strong {
+    color: var(--color-green-accent);
+    font-weight: 700;
+}
+
+/* --- B. SKILLS GRID & CARDS --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.skills-category {
+    background: var(--glass-bg-subcard);
+    border-radius: var(--border-radius-medium);
+    padding: 22px;
+    border: 1px solid var(--glass-border-subcard);
+    border-top: 1px solid var(--glass-border-subcard-top);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: background 0.25s ease;
+}
+
+.skills-category:hover {
+    background: var(--glass-bg-subcard-hover);
+}
+
+.skills-category h3 {
+    font-size: 1.1rem;
+    color: var(--color-slate-800);
+    margin-bottom: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+    padding-bottom: 8px;
+}
+
+.skills-category ul {
+    list-style-type: none;
+}
+
+.skills-category li {
+    font-size: 0.95rem;
+    color: var(--color-slate-800);
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 18px;
+}
+
+/* Custom Aero-style bullet pointers */
+.skills-category li::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #38bdf8, var(--color-sky-accent));
+    box-shadow: 0 1px 3px rgba(14, 165, 233, 0.35);
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+.skills-category li:last-child {
+    margin-bottom: 0;
+}
+
+/* --- C. CHRONOLOGICAL TIMELINE & LISTS --- */
+.timeline-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.timeline-list > li {
+    margin-bottom: 28px;
+    color: var(--color-slate-500); /* custom color for decimal marker numbers */
+}
+
+.timeline-list > li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.timeline-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-slate-800);
+}
+
+.timeline-title a {
+    color: var(--color-sky-link);
+    text-decoration: underline;
+    transition: var(--transition-fast);
+}
+
+.timeline-title a:hover {
+    color: var(--color-sky-accent);
+    text-shadow: 0 0 6px var(--glow-link-hover);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-green-accent);
+}
+
+.timeline-location {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--color-slate-600);
+    margin-bottom: 8px;
+}
+
+.timeline-list ul {
+    list-style-type: none;
+    padding-left: 18px;
+    margin-top: 6px;
+}
+
+.timeline-list li li {
+    font-size: 0.95rem;
+    color: var(--color-slate-800);
+    margin-bottom: 8px;
+    line-height: 1.65;
+    position: relative;
+    padding-left: 16px;
+}
+
+/* Custom dashed symbol prefix for chronological list items */
+.timeline-list li li::before {
+    content: "–";
+    color: var(--color-sky-accent);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.timeline-list li li:last-child {
+    margin-bottom: 0;
+}
+
+/* =============================================================================
+   7. FOOTER LAYOUT
+   ============================================================================= */
+.resume-footer {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px) saturate(1.3);
+    -webkit-backdrop-filter: blur(12px) saturate(1.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius-large);
+    text-align: center;
+    padding: 24px 20px;
+    margin-top: 22px;
+    color: var(--color-slate-700);
+    font-size: 0.85rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.resume-footer a {
+    color: var(--color-sky-link);
+    text-decoration: underline;
+    transition: var(--transition-fast);
+}
+
+.resume-footer a:hover {
+    color: var(--color-sky-accent);
+}
+
+.footer-note {
+    margin-top: 5px;
+    font-style: italic;
+    color: var(--color-slate-600);
+}
+
+/* =============================================================================
+   8. RESPONSIVE MEDIA QUERIES
+   ============================================================================= */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    .header-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .contact-info {
+        justify-content: center;
+    }
+    
+    .resume-section h2 {
+        border-left: none;
+        border-bottom: 3px solid var(--color-sky-accent);
+        padding-left: 0;
+        padding-bottom: 6px;
+    }
+    
+    .education-header, 
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .date-badge, 
+    .timeline-date {
+        margin-top: 2px;
+    }
+}

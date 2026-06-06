@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- 
+  ========================================================================
+  AARON REYES RODRIGUEZ - PORTFOLIO & RESUME
+  ========================================================================
+-->
+<html lang="en">
+  <head>
+    <!-- Document Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Page Title -->
+    <title>Aaron Reyes Rodriguez | Resume & Portfolio</title>
+    
+    <!-- Stylesheet Link -->
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Google Fonts Preconnections (Reduces font loading latency) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Font Loaders: Outfit (Headings) and Plus Jakarta Sans (Body copy) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;550;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- 
+      ========================================================================
+      1. HEADER: Name, Contact Information & Profile Picture
+      ========================================================================
+    -->
+    <header class="resume-header">
+      <div class="header-container">
+        
+        <!-- Header Text Details -->
+        <div class="header-text">
+          <h1>Aaron Reyes Rodriguez</h1>
+          <p class="tagline">Computer Science Student & Full Stack Software Engineer</p>
+          <hr class="header-divider" />
+          
+          <!-- Semantic address container for contact info, optimizing SEO & accessibility -->
+          <address class="contact-info">
+            <span class="contact-item">
+            </span>
+            <span class="contact-item">
+              <a href="mailto:aaronreyesrodriguez504@gmail.com" 
+                 title="Send email to Aaron">aaronreyesrodriguez504@gmail.com</a>
+            </span>
+            <span class="contact-item">
+              <a href="https://linkedin.com/in/aaron-reyes-rodriguez" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 title="Visit Aaron's LinkedIn Profile">LinkedIn</a>
+            </span>
+            <span class="contact-item">
+              <a href="https://github.com/Aaron-Reyes-Rodriguez" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 title="Visit Aaron's GitHub Profile">GitHub</a>
+            </span>
+            <span class="contact-item font-muted">Eugene, OR 97403</span>
+          </address>
+        </div>
+
+        <!-- Header Profile Picture with Glossy Frame styling in CSS -->
+        <div class="header-image-container">
+          <img src="PFP_LINK.jpeg" 
+               alt="Aaron Reyes Rodriguez Profile Picture" 
+               class="profile-img" />
+        </div>
+        
+      </div>
+    </header>
+
+    <!-- 
+      ========================================================================
+      2. MAIN CONTENT BODY: Personal details, Education, Skills, and Experience
+      ========================================================================
+    -->
+    <main class="resume-main">
+      
+      <!-- Section: About Me -->
+      <section id="about" class="resume-section">
+        <h2>About Me</h2>
+        <p>
+         I'm a software engineer who values balance, combining a focused approach to coding with a down-to-earth lifestyle. 
+         Outside of building full-stack applications, I spend my time playing basketball and winding down outdoors with my dog, Max. 
+         I am genuinely motivated by helping people, and I enjoy applying my technical skills to support others. I look forward to bringing 
+         this collaborative, steady mindset to a meaningful engineering role.
+        </p>
+      </section>
+
+      <!-- Section: Education -->
+      <section id="education" class="resume-section">
+        <h2>Education</h2>
+        <div class="education-block">
+          <div class="education-header">
+            <h3>University of Oregon</h3>
+            <span class="date-badge">Graduation: June 2026</span>
+          </div>
+          <p class="degree-info">Bachelor of Science in Computer Science, Cum Laude</p>
+          <p class="gpa-info">Grade Point Average: <strong>3.84 / 4.00</strong></p>
+        </div>
+      </section>
+
+      <!-- Section: Skills -->
+      <section id="skills" class="resume-section">
+        <h2>Skills</h2>
+        <p class="section-intro">A structured overview of my technical expertise, programming languages, frameworks, and core professional competencies.</p>
+        
+        <div class="skills-grid">
+          <!-- Category 1: Technical Skill Sets -->
+          <div class="skills-category">
+            <h3>Technical Skills</h3>
+            <ul>
+              <li><strong>Languages:</strong> Python, JavaScript, TypeScript, C#, C++, C, HTML/CSS, R, SQL</li>
+              <li><strong>Frameworks &amp; Libraries:</strong> React, Next.js, FastAPI, Flask, .NET, WPF</li>
+              <li><strong>Cloud &amp; Developer Tools:</strong> AWS (EC2, CloudFront, Amplify), Supabase, Docker, Git</li>
+            </ul>
+          </div>
+          
+          <!-- Category 2: Professional Competencies -->
+          <div class="skills-category">
+            <h3>Professional Skills</h3>
+            <ul>
+              <li>Full Stack Web Development &amp; Architecture</li>
+              <li>Algorithm Design, Analysis &amp; Optimization</li>
+              <li>Clinical Research &amp; Scientific Collaboration</li>
+              <li>Systematic Software Testing &amp; Debugging</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Experience & Projects (Chronological List) -->
+      <section id="experience" class="resume-section">
+        <h2>Experience &amp; Projects</h2>
+        <ol class="timeline-list">
+          
+          <!-- Item 1: Intern Software Developer at Almaprism -->
+          <li>
+            <div class="timeline-header">
+              <span class="timeline-title">
+                Intern Software Developer &mdash; 
+                <a href="https://almaprism.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   title="Visit Almaprism.com">Almaprism Inc.</a>
+              </span>
+              <span class="timeline-date">April 2025 - June 2025</span>
+            </div>
+            <p class="timeline-location">Kyoto, Japan &bull; C#, R, XAML, WPF, .NET</p>
+            <ul>
+              <li>Developed a WPF/C# application for neurobehavioral research platform to support clinical studies of neurodivergent patients, as well as improve user experience for medical professionals and patients.</li>
+              <li>Designed a novel LCS-based algorithm to compute a Prospective Outcome Modeling Ratio (POMR), a behavioral metric measuring metacognitive vigilance in pediatric ADHD patients.</li>
+              <li>Validated the algorithm's clinical value by demonstrating a strong statistical correlation (r = -0.719) with key behavioral deficits, directly aiding in earlier and more targeted diagnoses.</li>
+              <li>Listed as a contributing author on a research abstract that won Best Oral Presentation at the Japan Society for ADHD Annual Conference in Kyoto, Japan.</li>
+              <li>Contributing to a research paper slated for publication by end of 2026!</li>
+            </ul>
+          </li>
+
+          <!-- Item 2: Lead Full Stack Software Engineer at QuackHacks -->
+          <li>
+            <div class="timeline-header">
+              <span class="timeline-title">
+                Lead Full Stack Software Engineer &mdash; 
+                <a href="https://quackhacks.org" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   title="Visit QuackHacks.org">QuackHacks</a>
+              </span>
+              <span class="timeline-date">February 2025 - June 2026</span>
+            </div>
+            <p class="timeline-location">Eugene, Oregon &bull; React, TypeScript, Next.js, Supabase, SQL</p>
+            <ul>
+              <li>Contributed full stack development for QuackHacks.org, Oregon's largest MLH-affiliated hackathon, architecting systems designed for ~1,000 applicants.</li>
+              <li>Architected and deployed a real-time hackathon platform on Supabase that processed 2M+ database requests in 7 days, sustaining 10.4M realtime messages across 831 users with a peak of 127 concurrent connections and 22.75 GB of total data transfer.</li>
+              <li>Designed a PostgresSQL database of 20+ tables handling ~2,000,000 total API requests.</li>
+              <li>Conducted systematic bug testing and debugging across the full application, identifying and resolving issues in team creation and submission workflows, UI issues, and API error edge cases.</li>
+            </ul>
+          </li>
+
+          <!-- Item 3: Intern Software Engineer at Modern Amenities -->
+          <li>
+            <div class="timeline-header">
+              <span class="timeline-title">
+                Intern Software Engineer &mdash; 
+                Modern Amenities
+              </span>
+              <span class="timeline-date">April 2026 - June 2026</span>
+            </div>
+            <p class="timeline-location">React, Next.js, Supabase</p>
+            <ul>
+              <li>Built a Next.js &amp; Supabase digital signage dashboard, streamlining ad campaigns and role-based client portals.</li>
+              <li>Architected secure server-side authentication flows using Supabase SSR, protecting admin and advertiser portals.</li>
+              <li>Designed abstract server-side data stores to simplify database migrations and future schemas for machine metrics.</li>
+            </ul>
+          </li>
+
+          <!-- Item 4: Quackademics (University of Oregon Class Scheduler) -->
+          <li>
+            <div class="timeline-header">
+              <span class="timeline-title">
+                <a href="https://quackademics.me" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   title="Visit Quackademics.me">Quackademics (University of Oregon Class Scheduler)</a>
+              </span>
+            </div>
+            <p class="timeline-location">AWS &bull; React, TypeScript, Python, FastAPI</p>
+            <ul>
+              <li>Built both the backend REST API in Python using FastAPI and the TypeScript client on the frontend, covering endpoints for course lookups, professor profiles, class-professor listings, typeahead autocomplete, etc.</li>
+              <li>Built grade distribution visualizations in React and TypeScript showing letter-grade breakdowns per professor to support course selection.</li>
+              <li>Deployed the frontend to AWS Amplify and hosted backend services on EC2, using CloudFront for routing.</li>
+            </ul>
+          </li>
+          
+        </ol>
+      </section>
+
+    </main>
+
+    <!-- 
+      ========================================================================
+      3. FOOTER: Copyrights, Standards compliance details & Background source
+      ========================================================================
+    -->
+    <footer class="resume-footer">
+      <p>&copy; 2026 Aaron Reyes Rodriguez. All rights reserved.</p>
+      <p class="footer-note">Designed and coded in compliance with semantic HTML &amp; modern CSS standards.</p>
+      <p class="footer-note">
+        Background image sourced from: 
+        <a href="https://eskipaper.com/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           title="Visit Eskipaper.com">Eskipaper.com</a>
+      </p>
+    </footer>
+    
+  </body>
+</html>
