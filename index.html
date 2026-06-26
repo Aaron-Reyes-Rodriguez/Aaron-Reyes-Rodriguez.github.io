@@ -36,7 +36,7 @@
         <!-- Header Text Details -->
         <div class="header-text">
           <h1>Aaron Reyes Rodriguez</h1>
-          <p class="tagline">Computer Science Student & Full Stack Software Engineer</p>
+          <p class="tagline">Software Engineer</p>
           <hr class="header-divider" />
           
           <!-- Semantic address container for contact info, optimizing SEO & accessibility -->
@@ -81,12 +81,17 @@
       <!-- Section: About Me -->
       <section id="about" class="resume-section">
         <h2>About Me</h2>
-        <p>
-         I'm a software engineer who values balance, combining a focused approach to coding with a down-to-earth lifestyle. 
-         Outside of building full-stack applications, I spend my time playing basketball and winding down outdoors with my dog, Max. 
-         I am genuinely motivated by helping people, and I enjoy applying my technical skills to support others. I look forward to bringing 
-         this collaborative, steady mindset to a meaningful engineering role.
-        </p>
+        <div style="display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap;">
+          <p style="flex: 1; min-width: 200px;">
+            I'm a software engineer who values balance, combining a focused approach to coding with a down-to-earth lifestyle.
+            Outside of building full-stack applications, I spend my time playing basketball and winding down outdoors with my dog, Max.
+            I am genuinely motivated by helping people, and I enjoy applying my technical skills to support others. I look forward to bringing
+            this collaborative, steady mindset to a meaningful engineering role.
+          </p>
+          <img src="Max.JPG"
+               alt="Max, Aaron's dog"
+               style="width: 180px; height: 180px; object-fit: cover; border-radius: 12px; flex-shrink: 0;" />
+        </div>
       </section>
 
       <!-- Section: Education -->
@@ -122,7 +127,7 @@
           <div class="skills-category">
             <h3>Professional Skills</h3>
             <ul>
-              <li>Full Stack Web Development &amp; Architecture</li>
+              <li>Full Stack Web Development</li>
               <li>Algorithm Design, Analysis &amp; Optimization</li>
               <li>Clinical Research &amp; Scientific Collaboration</li>
               <li>Systematic Software Testing &amp; Debugging</li>
@@ -149,16 +154,16 @@
               <span class="timeline-date">April 2025 - June 2025</span>
             </div>
             <p class="timeline-location">Kyoto, Japan &bull; C#, R, XAML, WPF, .NET</p>
-            <ul>
-              <li>Developed a WPF/C# application for neurobehavioral research platform to support clinical studies of neurodivergent patients, as well as improve user experience for medical professionals and patients.</li>
-              <li>Designed a novel LCS-based algorithm to compute a Prospective Outcome Modeling Ratio (POMR), a behavioral metric measuring metacognitive vigilance in pediatric ADHD patients.</li>
-              <li>Validated the algorithm's clinical value by demonstrating a strong statistical correlation (r = -0.719) with key behavioral deficits, directly aiding in earlier and more targeted diagnoses.</li>
-              <li>Listed as a contributing author on a research abstract that won Best Oral Presentation at the Japan Society for ADHD Annual Conference in Kyoto, Japan.</li>
-              <li>Contributing to a research paper slated for publication by end of 2026!</li>
-            </ul>
+            <p>
+              Worked on a clinical research platform for neurodivergent patients in Kyoto, Japan.
+              Designed a behavioral algorithm for measuring metacognitive vigilance in pediatric ADHD patients,
+              which demonstrated a strong statistical correlation with key diagnostic markers.
+              Listed as a contributing author on a research abstract that won Best Oral Presentation
+              at the Japan Society for ADHD Annual Conference.
+            </p>
           </li>
 
-          <!-- Item 2: Lead Full Stack Software Engineer at QuackHacks -->
+          <!-- Item 2: Senior Full Stack Software Engineer at QuackHacks -->
           <li>
             <div class="timeline-header">
               <span class="timeline-title">
@@ -171,12 +176,13 @@
               <span class="timeline-date">February 2025 - June 2026</span>
             </div>
             <p class="timeline-location">Eugene, Oregon &bull; React, TypeScript, Next.js, Supabase, SQL</p>
-            <ul>
-              <li>Contributed full stack development for QuackHacks.org, Oregon's largest MLH-affiliated hackathon, architecting systems designed for ~1,000 applicants.</li>
-              <li>Architected and deployed a real-time hackathon platform on Supabase that processed 2M+ database requests in 7 days, sustaining 10.4M realtime messages across 831 users with a peak of 127 concurrent connections and 22.75 GB of total data transfer.</li>
-              <li>Designed a PostgresSQL database of 20+ tables handling ~2,000,000 total API requests.</li>
-              <li>Conducted systematic bug testing and debugging across the full application, identifying and resolving issues in team creation and submission workflows, UI issues, and API error edge cases.</li>
-            </ul>
+            <p>
+              Contributed to Oregon's largest MLH-affiliated hackathon platform over a year and a half.
+              Built fullstack features including a runtime form builder that lets organizers create and
+              deploy event forms without touching code. Designed the database schema and handled
+              real-time troubleshooting during the live event, which sustained millions of requests
+              across hundreds of active users.
+            </p>
           </li>
 
           <!-- Item 3: Intern Software Engineer at Modern Amenities -->
@@ -188,12 +194,11 @@
               </span>
               <span class="timeline-date">April 2026 - June 2026</span>
             </div>
-            <p class="timeline-location">React, Next.js, Supabase</p>
-            <ul>
-              <li>Built a Next.js &amp; Supabase digital signage dashboard, streamlining ad campaigns and role-based client portals.</li>
-              <li>Architected secure server-side authentication flows using Supabase SSR, protecting admin and advertiser portals.</li>
-              <li>Designed abstract server-side data stores to simplify database migrations and future schemas for machine metrics.</li>
-            </ul>
+            <p class="timeline-location">Eugene, Oregon &bull; React, Next.js, Supabase</p>
+            <p>
+              Built a digital signage dashboard for managing ad campaigns and client portals,
+              with secure server-side authentication and role-based access for admin and advertiser accounts.
+            </p>
           </li>
 
           <!-- Item 4: Quackademics (University of Oregon Class Scheduler) -->
@@ -203,15 +208,15 @@
                 <a href="https://quackademics.me" 
                    target="_blank" 
                    rel="noopener noreferrer" 
-                   title="Visit Quackademics.me">Quackademics (University of Oregon Class Scheduler)</a>
+                   title="Visit Quackademics.me">Quackademics — UO Course Scheduler</a>
               </span>
             </div>
             <p class="timeline-location">AWS &bull; React, TypeScript, Python, FastAPI</p>
-            <ul>
-              <li>Built both the backend REST API in Python using FastAPI and the TypeScript client on the frontend, covering endpoints for course lookups, professor profiles, class-professor listings, typeahead autocomplete, etc.</li>
-              <li>Built grade distribution visualizations in React and TypeScript showing letter-grade breakdowns per professor to support course selection.</li>
-              <li>Deployed the frontend to AWS Amplify and hosted backend services on EC2, using CloudFront for routing.</li>
-            </ul>
+            <p>
+              A personal project built to help University of Oregon students make better course decisions.
+              Covers all professors and courses across 5 years of grade data, with visual grade distributions
+              per professor and a full REST API backend deployed on AWS.
+            </p>
           </li>
           
         </ol>
